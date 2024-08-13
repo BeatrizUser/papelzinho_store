@@ -29,7 +29,12 @@ SECRET_KEY = 'django-insecure-)0ni=jw0#n^er&qk1#bpjn)bc6a40-liw-==_%a9%k1)h64zbj
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://1bc2-2804-6740-80-f900-c9a6-6e97-5aef-655.ngrok-free.app',
+]
+
 
 
 # Application definition
@@ -45,7 +50,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'produtos',
-
 ]
 
 X_FRAME_OPTIONS = "SAMEORIGIN"
@@ -115,7 +119,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pt-br'
 
 TIME_ZONE = 'UTC'
 
@@ -128,6 +132,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
